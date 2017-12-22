@@ -1,0 +1,10 @@
+.corpo{
+	position: static;
+	bottom: 0;
+	right: 0;
+	whidth: 1000px;
+	display: bottom right;
+}
+.azul{
+	background-color: red;
+}
