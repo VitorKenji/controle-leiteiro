@@ -8,22 +8,20 @@
 		return mysqli_query($conexao, $query);
 	}
 
-	function adicionar_vaca($id){
+	function adicionar_vaca($conexao, $id){
 
 		$query = "insert into vaca (id) values ('{$id}');";
 		return mysqli_query($conexao, $query);
 	}
 
-	function busca_animal($brinco){
+	function busca_animal($conexao, $brinco){
 
-		$resultado = array();
+		$animal = array();
 		$query = mysqli_query($conexao, "select id from animal where '{$brinco}' = brinco;");
 
-		while($resultado = mysqli_fetch_assoc($query)) {
-			array_push($produtos, $produto);
-		}
-		return $produtos;
+		$animal = mysqli_fetch_assoc($query);
 
+		return $animal;
 	}
 
 	function listar_vacas($conexao){

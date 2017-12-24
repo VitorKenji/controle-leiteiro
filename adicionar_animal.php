@@ -15,13 +15,16 @@
 	$idade = $_POST["idade"];
 	$genero = $_POST["sexo"];
 
+	$animal = array();
+
 	if($genero == "femea"){
 		if(adicionar_animal($conexao, $nome, $brinco, $origem, $data_nacimento, $peso_nacenca, $peso_desmama, $cor, $raca, $idade)){
 			?>
 			<p>animal adicionado</p>
 			<?php
-			$id = busca_animal($conexao, $brinco);
-			adicionar_vaca($conexao, $id);
+			$animal = busca_animal($conexao, $brinco);
+			print_r($animal["id"]);
+			adicionar_vaca($conexao, $animal["id"]);
 
 		}
 	}
